@@ -1,0 +1,183 @@
+@keyframes bgChange {
+    0% { background-color: white; }
+    33% { background-color: #E7E8FF; } /* Sky Blue */
+    66% { background-color: #F3CDD0; } /* Red */
+    100% { background-color: white; }
+}
+
+/* Keyframes for slide down and fade in */
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Starts a bit above, creating the slide effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bgChange 20s infinite; /* add animation */
+}
+
+.container {
+    background-color: #fdfdfd;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px; /* Limit max width to avoid too wide on larger screens */
+    text-align: center;
+}
+
+.title {
+    font-size: 14px; /* This will reduce the size of the text */
+    margin-bottom: 20px; /* Adjust space after title */
+    color: #454545; /* Dark gray color for text */
+    text-transform: uppercase; /* Converts the text to uppercase */
+    letter-spacing: 2px; /* Increases spacing between each letter for a more defined look */
+    font-weight: bold; /* Makes the font thicker */
+    border-bottom: 2px solid #ccc; /* Adds a bottom border for more definition */
+    padding-bottom: 10px; /* Adds a bit of padding to the bottom so border doesn't feel too close */
+    font-weight: 300;
+}
+
+
+.logo {
+    max-width: 100%; /* Ensure logo isn't too big */
+    margin-bottom: 15px;
+}
+
+.input-form textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    resize: both;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+    transform: translateY(-159px)
+}
+
+/* Updated Custom Button */
+.custom-button-new {
+    background: linear-gradient(to bottom, #ffffff, #ffffff);  /* Gradient from white to gray */
+    color: #000000;               /* Text color */
+    height: 75px;                 /* Adjust as needed */
+    width: 175px;                 /* Adjust as needed */
+    border: none;
+    cursor: pointer;
+    display: inline-block;        /* To center the button */
+    margin: 0 auto;
+    margin-top: -100px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;          /* Adjusted value for slight rounding */
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);  /* Black shadow for depth */
+}
+
+/* Hover effect for new button */
+.custom-button-new:hover {
+    background: linear-gradient(to bottom, #ffffff, #FFFFFF); /* Reverse gradient on hover */
+    transform: scale(1.05);    /* Slightly scale the button */
+    box-shadow: 3 3px 8px rgba(0, 0, 0, 0); /* Slightly intensify the shadow on hover */
+}
+
+
+.results h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.model-result {
+    margin-bottom: 15px;
+    animation: slideFadeIn 0.6s forwards;
+    opacity: 0; /* Initially hidden */
+
+    /* Adjusting the delay based on the item number */
+    &:nth-child(1) { animation-delay: 0.2s; }
+    &:nth-child(2) { animation-delay: 0.4s; }
+    &:nth-child(3) { animation-delay: 0.6s; }
+    &:nth-child(4) { animation-delay: 0.8s; }
+    &:nth-child(5) { animation-delay: 1s; }
+    &:nth-child(6) { animation-delay: 1.2s; }
+    &:nth-child(7) { animation-delay: 1.4s; }
+    &:nth-child(8) { animation-delay: 1.6s; }
+    /* ... Continue for as many items as you might have */
+}
+
+.bar {
+    background: #e9e9e9;
+    height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 0px;
+    margin-bottom: 15px;
+}
+
+.left-bar, .right-bar {
+    height: 100%;
+    width: 50%; /* Split equally */
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    font-weight: bold;
+    color: white; /* Text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* To make the text stand out on the colored background */
+}
+
+.left-bar {
+    background: red;
+    float: left;
+}
+
+.right-bar {
+    background: blue;
+    float: right;
+}
+
+.refresh-image-button {
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    width: 60px;  /* adjust to the desired size */
+    height: 60px; /* adjust to the desired size */
+}
+
+.model-name {
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the fade-in animation to the entire container */
+.container {
+    animation: fadeIn 2s forwards;
+}

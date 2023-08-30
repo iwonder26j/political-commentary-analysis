@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Political Commentary Analysis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+        body, textarea, input {
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Analysis of Political Commentary</h1>
+
+        {% if prediction is none %}
+            <!-- Display the GIF only on the input page -->
+            <img src="{{ url_for('static', filename='elements/logoWeb.gif') }}" alt="Logo" class="logo">
+            
+            <form action="/" method="post" class="input-form">
+                <textarea name="comment" id="comment" rows="4" placeholder="Please insert the text for analysis here!" required></textarea>
+                <button type="submit" class="custom-button-new">Analyze me!</button>
+            </form>
+        {% else %}
+        <div class="results">
+            <h2>Results:</h2>
+            {% for model, percentage in prediction.items() %}
+                <div class="model-result" title="{{ model }} - Left: {{ percentage.left }}%, Right: {{ percentage.right }}%">
+                    <div class="model-name">{{ model }}</div>
+                    <div class="bar">
+                        <div class="left-bar">
+                            LEFT {{ percentage.left }}%
+                        </div>
+                        <div class="right-bar">
+                            RIGHT {{ percentage.right }}%
+                        </div>                        
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- Here is the refresh button -->
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='elements/refresh.png') }}" alt="Refresh Button" class="refresh-image-button"></a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
