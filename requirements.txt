@@ -1,8 +1,8 @@
-Flask==2.2.2
-joblib==1.1.0
-keras==2.7.0
-numpy==1.22.4
-tensorflow==2.13.0
-tensorflow_macos==2.7.0
-transformers==4.21.1
+Flask
+joblib
+keras
+numpy
+tensorflow
+tensorflow_macos
+transformers
 gunicorn
