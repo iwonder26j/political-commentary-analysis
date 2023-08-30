@@ -3,6 +3,5 @@ joblib
 keras
 numpy
 tensorflow
-tensorflow_macos
 transformers
 gunicorn
